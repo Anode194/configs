@@ -1,0 +1,45 @@
+#! /bin/sh
+
+sxhkd &
+
+# sets bg and term colors for now
+
+$HOME/.config/polybar/launch.sh
+
+feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/orangeblue.png
+wal --theme base16-dracula
+picom -b --config ~/.config/picom/picom.conf
+
+bspc monitor DisplayPort-1 -d I II III IV V VI
+
+bspc config border_width       5
+bspc config window_gap         27
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
+
+#cursor
+xsetroot -cursor_name left_ptr &
+
+bspc config pointer_modifier mod1
+
+#bspc config top_padding 1
+#bspc config left_padding 5
+#bspc config right_padding 5
+#bspc config bottom_padding 5
+
+bspc config automatic_scheme alternate
+. "${HOME}/.cache/wal/colors.sh"
+
+# Border Colors
+bspc config focused_border_color $color4
+bspc config normal_border_color $color1
+# focus follows mouse
+bspc config focus_follows_pointer true
+bspc
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
