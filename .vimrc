@@ -8,7 +8,7 @@ set expandtab
 
 set number
 
-set timeoutlen=300
+set timeoutlen=800
 
 let mapleader="\<Space>"
 
@@ -18,11 +18,12 @@ let mapleader="\<Space>"
 nnoremap j gj
 nnoremap k gk
 
+" goals markdown template
+nnoremap <leader>gt :-1read $HOME/.config/nvim/.skeleton.md<CR>jA
+
 " enables permanent undo even if you exited vim
 set undodir=~/.vimdid
 set undofile
-
-
 
 " ale linting 
 let g:ale_linters = {'rust': ['rls']}
