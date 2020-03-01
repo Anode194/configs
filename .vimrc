@@ -87,8 +87,6 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'plasticboy/vim-markdown'
 
-Plug 'airblade/vim-rooter'
-
 Plug 'w0rp/ale'
 
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }

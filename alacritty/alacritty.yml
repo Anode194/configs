@@ -494,7 +494,7 @@ selection:
 #   - None
 #
 #   (macOS only):
-#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
+# - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
 #
 # - `command`: Fork and execute a specified command plus arguments
 #
@@ -558,14 +558,14 @@ key_bindings:
    - { key: C,      mods: Command,         action: Copy             }
    - { key: Q,      mods: Command,         action: Quit             }
    - { key: W,      mods: Command,         action: Quit             }
-   - { key: F,      mods: Command|Control, action: ToggleFullscreen }
+   - { key: F,      mods: Command|Control, action: ToggleSimpleFullscreen }
    - { key: N,      mods: Command,         action: SpawnNewInstance }
 
-   - { key: Paste,                    action: Paste                            }
-   - { key: Copy,                     action: Copy                             }
-   - { key: L,         mods: Control, action: ClearLogNotice                   }
-   - { key: L,         mods: Control, chars: "\x0c"                            }
-   - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
-   - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
-   - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
-   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+   - { key: Paste,                              action: Paste                            }
+   - { key: Copy,                               action: Copy                             }
+   - { key: L,         mods: command|Control,   action: ClearLogNotice                   }
+   - { key: L,         mods: command,           chars: "\x0c"                            }
+   - { key: PageUp,    mods: Shift,             action: ScrollPageUp,   mode: ~Alt       }
+   - { key: PageDown,  mods: Shift,             action: ScrollPageDown, mode: ~Alt       }
+   - { key: Home,      mods: Shift,             action: ScrollToTop,    mode: ~Alt       }
+   - { key: End,       mods: Shift,             action: ScrollToBottom, mode: ~Alt       }

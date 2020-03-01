@@ -4,6 +4,7 @@ alias yta="youtube-dl -x --audio-format flac"
 alias ytv="youtube-dl --add-metadata"
 alias f="ranger"
 alias j="joplin"
+alias v="nvim"
 
 # directory jumps
 
