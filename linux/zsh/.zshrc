@@ -19,6 +19,8 @@ ZSH_THEME="terminalparty"
 # needed for cargo in zsh
 export PATH="$HOME/.cargo/bin:$PATH"
 
+neofetch
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -93,4 +95,4 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
+source $HOME/.config/zsh/.aliases

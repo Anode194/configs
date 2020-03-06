@@ -15,9 +15,9 @@ sxhkd &
 
 $HOME/.config/polybar/launch.sh
 
-feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/orangeblue.png
 wal --theme base16-dracula
 picom -b --config ~/.config/picom/picom.conf
+feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/city4.jpg
 
 bspc monitor DisplayPort-1 -d I II III IV V VI
 
