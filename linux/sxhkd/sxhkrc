@@ -40,6 +40,10 @@ alt + ctrl + s
 
 alt + Return
 	alacritty
+alt + ctrl + Return
+    alacritty -e zsh -c nvim
+alt + ctrl + b
+    anamnesis --browser
 
 ############################# bspwm hotkeys ##############################
 
