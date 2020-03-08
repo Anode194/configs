@@ -20,7 +20,20 @@ nnoremap k gk
 
 " goals markdown template
 nnoremap <leader>gt :-1read $HOME/.config/nvim/.skeleton.md<CR>jA
+"
+" java markdown template
+nnoremap <leader>gj :-1read $HOME/.config/nvim/.skeleton.java<CR>
 
+"quick copy /paste from / to vim
+vnoremap <leader>c "+yy
+nnoremap <leader>c "+yy
+nnoremap <leader>p "*p
+
+"set split to the right and below
+set splitbelow splitright
+
+"set leader s to clear the search highlight
+nnoremap <leader>s :noh<CR>
 " enables permanent undo even if you exited vim
 set undodir=~/.vimdid
 set undofile
@@ -86,6 +99,8 @@ Plug 'martin-svk/vim-yaml'
 Plug 'rust-lang/rust.vim'
 
 Plug 'plasticboy/vim-markdown'
+
+Plug 'airblade/vim-rooter'
 
 Plug 'w0rp/ale'
 
