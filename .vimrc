@@ -20,6 +20,7 @@ nnoremap k gk
 
 " goals markdown template
 nnoremap <leader>gt :-1read $HOME/.config/nvim/.skeleton.md<CR>jA
+nnoremap <leader>gh :-1read $HOME/.config/nvim/.skeleton.html<CR>
 "
 " java markdown template
 nnoremap <leader>gj :-1read $HOME/.config/nvim/.skeleton.java<CR>
@@ -42,7 +43,6 @@ set undofile
 let g:ale_linters = {'rust': ['rls']}
 " change linenumber color
 highlight LineNr term=bold cterm=NONE ctermfg=cyan ctermbg=NONE gui=NONE guifg=cyan guibg=NONE
-
 
 
 " Color name (:help cterm-colors) or ANSI code
@@ -95,6 +95,8 @@ nnoremap <S-h> :call ToggleHiddenAll()<CR>
 let g:airline_theme='base16'
 call plug#begin('~/.vim/plugged')
 Plug 'martin-svk/vim-yaml'
+
+Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'rust-lang/rust.vim'
 

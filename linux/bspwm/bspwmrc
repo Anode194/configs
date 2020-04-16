@@ -17,8 +17,9 @@ $HOME/.config/polybar/launch.sh
 
 wal --theme base16-dracula
 picom -b --config ~/.config/picom/picom.conf
-feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/city4.jpg
+feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/newYork.jpg
 
+anamnesis --start
 bspc monitor DisplayPort-1 -d I II III IV V VI
 
 bspc config border_width       5
