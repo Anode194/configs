@@ -1,8 +1,8 @@
 filetype plugin indent on
 " show existing tab with 4 spaces width
-set tabstop=4
+set tabstop=2
 
-set shiftwidth=4
+set shiftwidth=2
 
 set expandtab
 
@@ -24,6 +24,7 @@ nnoremap <leader>gt :-1read $HOME/.config/nvim/.skeleton.md<CR>jA
 " java markdown template
 nnoremap <leader>gj :-1read $HOME/.config/nvim/.skeleton.java<CR>
 
+
 "quick copy /paste from / to vim
 vnoremap <leader>c "+yy
 nnoremap <leader>c "+yy
@@ -39,12 +40,14 @@ set undodir=~/.vimdid
 set undofile
 
 " ale linting 
-let g:ale_linters = {'rust': ['rls']}
+let g:ale_linters = {'rust': ['rls'],'swift':['sourcekitlsp']}
 " change linenumber color
 highlight LineNr term=bold cterm=NONE ctermfg=cyan ctermbg=NONE gui=NONE guifg=cyan guibg=NONE
 
 
-
+" Use ALE's function for omnicompletion.
+set omnifunc=ale#completion#OmniFunc
+set completeopt=menu,menuone,preview,noselect,noinsert
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
@@ -62,13 +65,14 @@ let g:limelight_paragraph_span = 0
 " Beginning/end of paragraph
 "   When there's no empty line between the paragraphs
 "   and each paragraph starts with indentation
-let g:limelight_bop = '^\s'
-let g:limelight_eop = '\ze\n^\s'
+"let g:limelight_bop = '^\s'
+"let g:limelight_eop = '\ze\n^\s'
 
 " Highlighting priority (default: 10)
 "   Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
-
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 " type shift + h to hide all status bars for typing test videos.
 
 let s:hidden_all = 0
@@ -89,24 +93,35 @@ function! ToggleHiddenAll()
         set showcmd
     endif
 endfunction
+" AutoCompletion settings
+" Pass a dictionary to set multiple options to deoplete for autocomplettion
 
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
+let g:deoplete#enable_at_startup = 1
 
 let g:airline_theme='base16'
 call plug#begin('~/.vim/plugged')
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 Plug 'martin-svk/vim-yaml'
 
 Plug 'rust-lang/rust.vim'
 
 Plug 'plasticboy/vim-markdown'
 
-Plug 'airblade/vim-rooter'
-
 Plug 'w0rp/ale'
 
-Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
+Plug 'keith/swift.vim'
 
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 Plug 'altercation/vim-colors-solarized'
 
