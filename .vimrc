@@ -1,23 +1,26 @@
+"---------------------------------------- general settings------------------------------------------------------"
 filetype plugin indent on
-" show existing tab with 4 spaces width
+" show existing tab with 2 spaces width
 set tabstop=2
-
 set shiftwidth=2
-
 set expandtab
-
-set number
-
+set rnu " relative number
+set nu " relative number
 set timeoutlen=800
-
-let mapleader="\<Space>"
-
-" custom hotkeys with space as leader
-
-" move by line 
+"set split to the right and below
+set splitbelow splitright
+"sets undo directory and file
+set undodir=~/.vimdid
+" enables permanent undo even if you exited vim
+set undofile
+" move by visible line 
 nnoremap j gj
 nnoremap k gk
+let mapleader="\<Space>"
 
+"set leader s to clear the search highlight
+nnoremap <leader>s :noh<CR>
+"-----------------j-----------------------snippets-------------------------------------------------"
 " goals markdown template
 nnoremap <leader>gt :-1read $HOME/.config/nvim/.skeleton.md<CR>jA
 nnoremap <leader>gh :-1read $HOME/.config/nvim/.skeleton.html<CR>
@@ -25,33 +28,70 @@ nnoremap <leader>gh :-1read $HOME/.config/nvim/.skeleton.html<CR>
 " java markdown template
 nnoremap <leader>gj :-1read $HOME/.config/nvim/.skeleton.java<CR>
 
-
 "quick copy /paste from / to vim
 vnoremap <leader>c "+yy
 nnoremap <leader>c "+yy
 nnoremap <leader>p "*p
 
-"set split to the right and below
-set splitbelow splitright
+"-----------------------------------------status line--------------------------------------------------"
+set statusline= ""
+set statusline+=%#DiffAdd#
+set statusline+=\ %F\  
+set statusline+=%#foldColumn#  
+set statusline+=\ %Y
+set statusline+=\ %r 
+set statusline+=%#DiffAdd#
+set statusline+=%=
+set statusline+=%#foldColumn#\    
+set statusline+=%{fugitive#head()}\  
+set statusline+=%#DiffAdd#
+set statusline+=\ <%p%%>\  
+set statusline+=\ C%c\ L%l/%L 
+set statusline+=\ %#DiffAdd#
+set statusline+=\ BUF:\ %n\   
 
-"set leader s to clear the search highlight
-nnoremap <leader>s :noh<CR>
-" enables permanent undo even if you exited vim
-set undodir=~/.vimdid
-set undofile
+"-----------------------------------------Plugins--------------------------------------------------"
 
+call plug#begin('~/.vim/plugged')
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+Plug 'martin-svk/vim-yaml'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tpope/vim-fugitive'
+Plug 'rust-lang/rust.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'w0rp/ale'
+Plug 'keith/swift.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'dylanaraps/wal.vim'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'yuttie/comfortable-motion.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'junegunn/goyo.vim'
+call plug#end()
+
+"--------------------------------------plugin settings----------------------------------------------------------"
 " ale linting 
 let g:ale_linters = {'rust': ['rls'],'swift':['sourcekitlsp']}
 " change linenumber color
 highlight LineNr term=bold cterm=NONE ctermfg=cyan ctermbg=NONE gui=NONE guifg=cyan guibg=NONE
 
 
-<<<<<<< HEAD
-=======
 " Use ALE's function for omnicompletion.
 set omnifunc=ale#completion#OmniFunc
 set completeopt=menu,menuone,preview,noselect,noinsert
->>>>>>> 49517804da926b918d5f58eda5ac8d6d69fde986
+
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
@@ -99,57 +139,4 @@ function! ToggleHiddenAll()
 endfunction
 " AutoCompletion settings
 " Pass a dictionary to set multiple options to deoplete for autocomplettion
-
 let g:deoplete#enable_at_startup = 1
-
-let g:airline_theme='base16'
-call plug#begin('~/.vim/plugged')
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
-Plug 'martin-svk/vim-yaml'
-
-Plug 'ludovicchabant/vim-gutentags'
-
-Plug 'rust-lang/rust.vim'
-
-Plug 'plasticboy/vim-markdown'
-
-Plug 'w0rp/ale'
-
-Plug 'keith/swift.vim'
-
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf.vim'
-
-Plug 'altercation/vim-colors-solarized'
-
-Plug 'dylanaraps/wal.vim'
-
-Plug 'tpope/vim-surround'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'vim-airline/vim-airline'
-
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'plasticboy/vim-markdown'
-
-Plug 'junegunn/goyo.vim'
-
-Plug 'junegunn/limelight.vim'
-
-Plug 'yuttie/comfortable-motion.vim'
-
-Plug 'machakann/vim-highlightedyank'
-
-call plug#end()
-

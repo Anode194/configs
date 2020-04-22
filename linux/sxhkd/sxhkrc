@@ -39,6 +39,11 @@ alt + ctrl + Return
 super + o
     anamnesis -b
 
+############################# change computer state ##############################
+super + v
+  amixer -D pulse sset Master 5%+ 
+super + shift + v
+  amixer -D pulse sset Master 5%- 
 ############################# bspwm hotkeys ##############################
 
 
