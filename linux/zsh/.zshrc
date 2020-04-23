@@ -19,7 +19,7 @@ ZSH_THEME="terminalparty"
 # needed for cargo in zsh
 export PATH="$HOME/.cargo/bin:$PATH"
 
-neofetch
+greetme
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
