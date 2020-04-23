@@ -24,6 +24,8 @@ bindkey "ç" fzf-cd-widget
 it2prof() {
     echo -e "\033]50;SetProfile=$1\a"
 }
+# navi zsh widget
+source <(navi widget zsh)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

@@ -6,7 +6,7 @@ set shiftwidth=2
 
 set expandtab
 
-set number
+set rnu " relative number
 
 set timeoutlen=800
 
@@ -61,6 +61,11 @@ let g:limelight_default_coefficient = 0.7
 
 " Number of preceding/following paragraphs to include (default: 0)
 let g:limelight_paragraph_span = 0
+
+" use fzf for file search
+set rtp+=/usr/local/opt/fzf
+
+let g:vim_markdown_folding_disabled = 1
 
 " Beginning/end of paragraph
 "   When there's no empty line between the paragraphs
@@ -120,7 +125,6 @@ Plug 'w0rp/ale'
 
 Plug 'keith/swift.vim'
 
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf.vim'
 
 Plug 'altercation/vim-colors-solarized'
