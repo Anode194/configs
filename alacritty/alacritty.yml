@@ -98,7 +98,7 @@ window:
 #tabspaces: 8
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
   #normal:
     # Font family
@@ -107,7 +107,7 @@ window:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+ family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -146,7 +146,7 @@ window:
     #style: Bold Italic
 
   # Point size
-  #size: 11.0
+ size: 9.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -184,38 +184,38 @@ custom_cursor_colors: true
 # dracula
 colors:
  primary:
-   background: '0x282a36'
-   foreground: '0xf8f8f2'
- cursor:
-   text: '0x44475a'
-   cursor: '0xf8f8f2'
+   background: '0x161c23'
+   foreground: '0xd2eff0'
+   #cursor:
+   #text: '0x44475a'
+   #cursor: '0xf8f8f2'
  normal:
-   black:   '0x282a36'
-   red:     '0xff5555'
-   green:   '0x50fa7b'
-   yellow:  '0xf1fa8c'
-   blue:    '0x6272a4'
-   magenta: '0xff79c6'
-   cyan:    '0x8be9fd'
-   white:   '0xf8f8f2'
+   black:   '0x14282c'
+   yellow:  '0x0db383'
+   red:     '0xE83f35'
+   green:   '0x34bb56'
+   blue:    '0x0c425c'
+   magenta: '0xd150d1'
+   cyan:    '0x60aed3'
+   white:   '0xbceff0'    
  bright:
-   black:   '0x44475a'
-   red:     '0xff8888'
-   green:   '0x82fba0'
-   yellow:  '0xf7fcbd'
-   blue:    '0x828fb7'
-   magenta: '0xffacdc'
-   cyan:    '0xbdf3fe'
-   white:   '0xffffff'
- dim:
-   black:   '0x14151b'
-   red:     '0xff2222'
-   green:   '0x1ef956'
-   yellow:  '0xebf85b'
-   blue:    '0x4d5b86'
-   magenta: '0xff46b0'
-   cyan:    '0x59dffc'
-   white:   '0xe6e6d1'    
+   black:   '0x1b363c'
+   red:     '0xd95afa'
+   green:   '0x455a8f'
+   yellow:  '0x1b363c'
+   blue:    '0x295059'
+   magenta: '0x306672'
+   cyan:    '0x2a5058'
+   white:   '0xa6eff2'
+   dim:
+   black:   '0x0f1e21'
+   red:     '0x7c212d'
+   green:   '0x6fcfa2'
+   yellow:  '0x61A276'
+   blue:    '0x2b5c66'
+   magenta: '0xaf40ad'
+   cyan:    '0x13a8ce'
+   white:   '0x3d577f'
    # The dimmed foreground color is calculated automatically if it is not present.
     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
     # is `false`, the normal foreground color will be used.
@@ -494,7 +494,7 @@ selection:
 #   - None
 #
 #   (macOS only):
-# - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
+#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
 #
 # - `command`: Fork and execute a specified command plus arguments
 #
@@ -558,14 +558,14 @@ key_bindings:
    - { key: C,      mods: Command,         action: Copy             }
    - { key: Q,      mods: Command,         action: Quit             }
    - { key: W,      mods: Command,         action: Quit             }
-   - { key: F,      mods: Command|Control, action: ToggleSimpleFullscreen }
+   - { key: F,      mods: Command|Control, action: ToggleFullscreen }
    - { key: N,      mods: Command,         action: SpawnNewInstance }
 
-   - { key: Paste,                              action: Paste                            }
-   - { key: Copy,                               action: Copy                             }
-   - { key: L,         mods: command|Control,   action: ClearLogNotice                   }
-   - { key: L,         mods: command,           chars: "\x0c"                            }
-   - { key: PageUp,    mods: Shift,             action: ScrollPageUp,   mode: ~Alt       }
-   - { key: PageDown,  mods: Shift,             action: ScrollPageDown, mode: ~Alt       }
-   - { key: Home,      mods: Shift,             action: ScrollToTop,    mode: ~Alt       }
-   - { key: End,       mods: Shift,             action: ScrollToBottom, mode: ~Alt       }
+   - { key: Paste,                    action: Paste                            }
+   - { key: Copy,                     action: Copy                             }
+   - { key: L,         mods: Control, action: ClearLogNotice                   }
+   - { key: L,         mods: Control, chars: "\x0c"                            }
+   - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+   - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+   - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
+   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
