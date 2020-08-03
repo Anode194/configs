@@ -4,8 +4,20 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set expandtab
+<<<<<<< HEAD
+
 set rnu " relative number
+
+=======
+set rnu " relative number
+<<<<<<< HEAD
 set nu " normal number
+||||||| ba573dc
+set nu " relative number
+=======
+set nu " relative number
+>>>>>>> ba573dc5924db33a7299b451ac5e3c1e6b725fe1
+>>>>>>> 8f4e835f111a067b6831ee214f6f9f3cca0c414f
 set timeoutlen=800
 "set split to the right and below
 set splitbelow splitright
@@ -147,6 +159,11 @@ let g:limelight_default_coefficient = 0.7
 " Number of preceding/following paragraphs to include (default: 0)
 let g:limelight_paragraph_span = 0
 
+" use fzf for file search
+set rtp+=/usr/local/opt/fzf
+
+let g:vim_markdown_folding_disabled = 1
+
 " Beginning/end of paragraph
 "   When there's no empty line between the paragraphs
 "   and each paragraph starts with indentation
@@ -160,3 +177,55 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight! 
 
 let g:deoplete#enable_at_startup = 1
+<<<<<<< HEAD
+
+let g:airline_theme='base16'
+call plug#begin('~/.vim/plugged')
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+Plug 'martin-svk/vim-yaml'
+
+Plug 'rust-lang/rust.vim'
+
+Plug 'plasticboy/vim-markdown'
+
+Plug 'w0rp/ale'
+
+Plug 'keith/swift.vim'
+
+Plug 'junegunn/fzf.vim'
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'dylanaraps/wal.vim'
+
+Plug 'tpope/vim-surround'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'plasticboy/vim-markdown'
+
+Plug 'junegunn/goyo.vim'
+
+Plug 'junegunn/limelight.vim'
+
+Plug 'yuttie/comfortable-motion.vim'
+
+Plug 'machakann/vim-highlightedyank'
+
+call plug#end()
+
+=======
+>>>>>>> ba573dc5924db33a7299b451ac5e3c1e6b725fe1
