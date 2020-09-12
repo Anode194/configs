@@ -10,14 +10,12 @@
        #_\/\\\\\\\\\\\\\/__\///\\\\\\\\\\\/___\/\\\_________________\//\\\__\//\\\______\/\\\_____________\/\\\_ 
         #_\/////////////______\///////////_____\///___________________\///____\///_______\///______________\///__
 sxhkd &
-# 
-########## startup sequence ##########
+########### startup sequence ##########
 
 $HOME/.config/polybar/launch.sh
 
-wal --theme base16-dracula
 picom -b --config ~/.config/picom/picom.conf
-feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/newYork.jpg
+feh --bg-fill ~/Media/Pictures/WallPapers/ultrawide/purple2.jpg
 
 anamnesis --start
 bspc monitor DisplayPort-1 -d I II III IV V VI
@@ -28,6 +26,13 @@ bspc config window_gap         27
 bspc config split_ratio          0.5
 bspc config borderless_monocle   false
 bspc config gapless_monocle      false
+
+bspc config top_monocle_padding 80
+bspc config bottom_monocle_padding 80
+bspc config right_monocle_padding 80
+bspc config left_monocle_padding 80
+
+bspc config single_monocle true
 
 ########## cursor ##########
 xsetroot -cursor_name left_ptr &
@@ -44,8 +49,9 @@ bspc config automatic_scheme alternate
 
 
 ########## Border Colors ##########
-bspc config focused_border_color $color4
-bspc config normal_border_color $color1
+bspc config focused_border_color \#60aed3
+bspc config normal_border_color \#b04370
+bspc config presel_feedback_color \#b04370
 
 ########## focus follows mouse ##########
 bspc config focus_follows_pointer true
@@ -56,3 +62,5 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a anamnesis  state=floating
+    

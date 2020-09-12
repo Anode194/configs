@@ -18,8 +18,9 @@ ZSH_THEME="terminalparty"
 
 # needed for cargo in zsh
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Code/bin:$PATH" # personal bin file
+export PATH="$home/.gem/ruby/2.7.0/bin:$PATH" #ruby gems in path
 
-greetme
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -96,3 +97,7 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 source $HOME/.config/zsh/.aliases
+# fzf keybindings and completion
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+greetme

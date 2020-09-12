@@ -1,13 +1,13 @@
 /**
- * Author: Primetoxinz
+ * Author: joxphillips@gmail.com
  */
 * {
-    text-color:                  #f2f2f2;
-    background-color:            #4e4743;
+    text-color:                  #aea8c8;
+    background-color:            #161c23;
     lightbg:                     #534c48;
     red:                         #f15d22;
     orange:                      #faa41a; 
-    blue:                        #48b9c7; 
+    blue:                        #af40ad; 
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -40,8 +40,8 @@
     background-color: @background;
 }
 #mainbox {
-    border:  0;
-    padding: 0;
+    border:  20;
+    padding: 20;
 }
 #message {
     border:     1px dash 0px 0px ;
@@ -53,12 +53,12 @@
 }
 #listview {
     fixed-height: 0;
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     padding:      2px 0px 0px ;
     text-color: @separatorcolor;
 }
 #element {
-    border: 0;
+    border: 3;
 }
 #element.normal.normal {
     text-color: @normal-foreground;
