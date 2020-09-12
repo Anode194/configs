@@ -17,15 +17,13 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-;background = #222
-background-alt = #444
-foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
-foreground-alt = #555
-primary = ${xrdb:color6:#222}
-secondary = ${xrdb:color4:#222}
-alert = ${xrdb:color5:#222}
+background = #161c23
+background-alt = #1b232b
+foreground = #13a3ce 
+foreground-alt =#bceff0
+primary = #6fcfa2
+secondary = #d150d1
+alert = #e83f35
 
 [bar/anodeBar]
 monitor = ${env:MONITOR:DisplayPort-1}
@@ -40,7 +38,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = #b04370
 
 border-size = 0
 border-color = #00000000
@@ -57,7 +55,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm 
 modules-center = date 
-modules-right = filesystem alsa pulseaudio xkeyboard memory cpu wlan eth temperature powermenu 
+modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth temperature powermenu 
 
 tray-position = right
 tray-padding = 1
@@ -140,7 +138,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = #60aed3
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -189,11 +187,11 @@ label = BL
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = #34bb56
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #0db383
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -208,7 +206,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #d150d1
 label = %percentage:2%%
 
 [module/memory]
@@ -269,7 +267,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #bce550
 
 label = %date% %time%
 
@@ -370,7 +368,7 @@ format = <ramp> <label>
 format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
-
+hwmon-path = /sys/class/hwmon/hwmon2/temp1_input
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}

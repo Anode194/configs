@@ -30,21 +30,23 @@ alt + Escape
 ############################# launch programs ##############################
 
 alt + @space
-	rofi -show run 
+	rofi -config ~/.config/rofi/dscnt-dark.rasi -show run 
 
 alt + Return
 	alacritty
 alt + ctrl + Return
-    alacritty -e zsh -c vim
+    alacritty -e zsh -c nvim
 super + o
     anamnesis -b
 
+super + s
+  scrot -d 5 -e 'mv $f ~/Media/Pictures/screen_shots/'
 ############################# change computer state ##############################
 super + v
   amixer -D pulse sset Master 5%+ 
 super + shift + v
   amixer -D pulse sset Master 5%- 
-############################# bspwm hotkeys ##############################
+############################# bspwm hotkeys ######################################
 
 
 # quit bspwm normally
@@ -70,7 +72,7 @@ alt + g
 	bspc node -s biggest
 
 
-############################# state/flags ##############################
+############################# state/flags ######################################
 
 # set the window state
 alt + {t,shift + t,s,f}
@@ -81,7 +83,7 @@ alt + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
 
-############################# focus/swap ##############################
+############################# focus/swap #######################################
 
 # rotate window
 alt + r
@@ -123,10 +125,10 @@ alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # send to a desktop and follow
-super + control + {1-9,0}
+ctrl + shift + {1-9,0}
     bspc node -d '^{1-9,10}' --follow 
 
-############################# focus/swap ##############################
+############################# focus/swap #################################
 
 # preselect the direction
 alt + ctrl + {h,j,k,l}
@@ -160,3 +162,17 @@ super + shift + {a,s,w,d}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+###################### change gaps ##############################
+alt + {equal, minus }
+	bspc config window_gap $(( $(bspc config window_gap) {-,+} 5 ))
+
+alt + ctrl + minus
+	bspc config right_monocle_padding $(( $(bspc config right_monocle_padding) { +5 )); \
+	bspc config left_monocle_padding $(( $(bspc config left_monocle_padding) { +5 ));
+alt + shift + minus
+	bspc config right_monocle_padding $(( $(bspc config right_monocle_padding) { -5 )); \
+	bspc config left_monocle_padding $(( $(bspc config left_monocle_padding) { -5 ));
+
+super + 0
+	bspc config window_gap 10
