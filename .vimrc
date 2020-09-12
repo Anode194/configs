@@ -1,24 +1,13 @@
 "---------------------------------------- general settings------------------------------------------------------"
 filetype plugin indent on
 " show existing tab with 2 spaces width
-set tabstop=2
-set shiftwidth=2
-set expandtab
-<<<<<<< HEAD
-
+set tabstop=4
+set shiftwidth=4
 set rnu " relative number
-
-=======
-set rnu " relative number
-<<<<<<< HEAD
 set nu " normal number
-||||||| ba573dc
-set nu " relative number
-=======
-set nu " relative number
->>>>>>> ba573dc5924db33a7299b451ac5e3c1e6b725fe1
->>>>>>> 8f4e835f111a067b6831ee214f6f9f3cca0c414f
 set timeoutlen=800
+" sets tn -> tabnew
+ca tn tabnew
 "set split to the right and below
 set splitbelow splitright
 "sets undo directory and file
@@ -113,12 +102,13 @@ else
   lug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'rust-lang/rust.vim'
+Plug 'preservim/nerdtree'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'w0rp/ale'
-Plug 'ap/vim-css-color'
+Plug 'gorodinskiy/vim-coloresque'
 Plug 'keith/swift.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'dylanaraps/wal.vim'
@@ -133,15 +123,19 @@ call plug#end()
 
 "--------------------------------------helpful functions----------------------------------------------------------"
 "open url in browser
-nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+nnoremap <leader>u :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 "--------------------------------------plugin settings----------------------------------------------------------"
 " ale linting 
 let g:ale_linters = {'rust': ['rls','cargo!!','rustc','rustfmt'],'swift':['sourcekitlsp'],'javascript':['eslint']}
-"
+" jump to errors with ale
+map <leader>e <Plug>(ale_next_wrap_error)
+map <leader>E <Plug>(ale_previous_wrap_error)
+map <leader>w <Plug>(ale_next_wrap_warning)
+map <leader>W <Plug>(ale_previous_wrap_warning)
 
 " Use ALE's function for omnicompletion.
 let g:ale_completion_max_suggestions = 10
-set omnifunc=ale#completion#Omnifunc
+
 let g:ale_completion_enabled = 1
 let g:deoplete#enable_at_startup = 1
 
@@ -159,11 +153,6 @@ let g:limelight_default_coefficient = 0.7
 " Number of preceding/following paragraphs to include (default: 0)
 let g:limelight_paragraph_span = 0
 
-" use fzf for file search
-set rtp+=/usr/local/opt/fzf
-
-let g:vim_markdown_folding_disabled = 1
-
 " Beginning/end of paragraph
 "   When there's no empty line between the paragraphs
 "   and each paragraph starts with indentation
@@ -177,55 +166,3 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight! 
 
 let g:deoplete#enable_at_startup = 1
-<<<<<<< HEAD
-
-let g:airline_theme='base16'
-call plug#begin('~/.vim/plugged')
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
-Plug 'martin-svk/vim-yaml'
-
-Plug 'rust-lang/rust.vim'
-
-Plug 'plasticboy/vim-markdown'
-
-Plug 'w0rp/ale'
-
-Plug 'keith/swift.vim'
-
-Plug 'junegunn/fzf.vim'
-
-Plug 'altercation/vim-colors-solarized'
-
-Plug 'dylanaraps/wal.vim'
-
-Plug 'tpope/vim-surround'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'vim-airline/vim-airline'
-
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'plasticboy/vim-markdown'
-
-Plug 'junegunn/goyo.vim'
-
-Plug 'junegunn/limelight.vim'
-
-Plug 'yuttie/comfortable-motion.vim'
-
-Plug 'machakann/vim-highlightedyank'
-
-call plug#end()
-
-=======
->>>>>>> ba573dc5924db33a7299b451ac5e3c1e6b725fe1
