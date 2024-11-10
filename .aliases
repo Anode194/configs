@@ -4,12 +4,6 @@ alias ytv="youtube-dl --add-metadata"
 alias f="nvim ."
 alias j="joplin"
 alias v="nvim -p"
-alias open="rifle"
-
-alias preonic="bat ~/Code/qmk_firmware/keyboards/preonic/keymaps/anode194/keymap.c"
-# directory jumps
-
-alias gs="cd ~/Documents/school"
-alias gw="cd ~/Media/Pictures/WallPapers/ultrawide/"
-
+alias t="tmux -f ~/.config/tmux/.tmux.conf new-session"
+alias githist="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 

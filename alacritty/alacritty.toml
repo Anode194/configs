@@ -1,0 +1,42 @@
+#### ALLACRITTY CONFIG ####
+# additional config options: https://alacritty.org/config-alacritty.html#s25
+[general]
+# THEMES
+import = [
+    "~/.config/alacritty/themes/themes/citylights.toml"
+]
+# WINDOW PROPERTIES
+[window]
+dimensions = { columns = 100, lines = 25 }
+padding = { x = 30, y = 30 }
+dynamic_padding = true
+decorations = "Buttonless"
+opacity = 1.0
+blur = false
+startup_mode = "windowed"
+title = "Cogito ergo sum"
+dynamic_title = false
+# FONT
+[font]
+normal = { family = "Inconsolata", style = "Expanded Regular"}
+bold = { family = "Inconsolata", style = "Expanded ExtraBold"}
+builtin_box_drawing = true
+size = 18.0
+
+# BELL
+[bell]
+#animation = "EaseOutSine"
+#duration = 300
+#color = "#e0218a"
+
+# Cursor
+[cursor]
+style = { shape = "Block", blinking = "Off"}
+vi_mode_style = { shape = "Block", blinking = "On"}
+blink_interval = 350
+
+# Keybindings
+[keyboard]
+bindings = [
+	{ key = "l",mods = "Control",chars = '\033[H'},
+]
