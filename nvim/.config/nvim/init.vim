@@ -39,12 +39,17 @@ nnoremap <leader>s :noh<CR>
 " files into vim
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,*.swp
 syntax on
-" run rust format
+"
+" run rust format and Rust playpen
+let g:rust_clip_command = 'pbcopy'
 nnoremap <leader>rf :RustFmt<CR>
+nnoremap <leader>rp :RustPlay<CR>
 "quick file search
 nnoremap <leader>gf :Files<CR>
 nnoremap <leader>cb :Cargo build<CR>
 nnoremap <leader>cr :Cargo run<CR>
+
+nnoremap <leader>b :buffers<CR>:buffer<Space>
 
 "-----------------------------------------file specific settings-------------------------------------------------"
 " sets it so it doesn't cut words in half in markdown
@@ -75,7 +80,6 @@ set statusline+=\ %r
 set statusline+=%#Type#
 set statusline+=%=
 set statusline+=%#constant#\    
-set statusline+=%{fugitive#head()}\  
 set statusline+=%#specialkey#
 set statusline+=\ <%p%%>\  
 set statusline+=%#Type#\    
@@ -101,32 +105,26 @@ highlight Pmenu ctermbg=darkmagenta ctermfg=black
 
 call plug#begin('~/.vim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'mattn/webapi-vim'
 Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'martin-svk/vim-yaml'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/nerdtree'
 Plug 'plasticboy/vim-markdown'
 Plug 'keith/swift.vim'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'w0rp/ale'
 call plug#end()
 
 "--------------------------------------plugin settings----------------------------------------------------------"
@@ -197,3 +195,20 @@ function! ToggleHiddenAll()
         set showcmd
     endif
 endfunction
+" typescript lang server setup
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'javascript support using typescript-language-server',
+      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+      \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
+      \ })
+endif
+" html lang server setup
+if executable('html-languageserver')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'html-languageserver',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
+    \ 'whitelist': ['html'],
+  \ })
+endif
