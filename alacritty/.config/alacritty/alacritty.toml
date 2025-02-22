@@ -40,3 +40,6 @@ blink_interval = 350
 bindings = [
 	{ key = "l",mods = "Control",chars = '\033[H'},
 ]
+
+[terminal]
+shell="/opt/homebrew/bin/nu"
