@@ -18,6 +18,7 @@
 # them for future reference.
 
 $env.path ++= ["/opt/homebrew/bin/"]
+$env.path ++= ["/usr/local/bin/"]
 $env.config.buffer_editor = "/opt/homebrew/bin/nvim"
 $env.config.buffer_editor = "nvim"
 $env.PROMPT_INDICATOR_VI_NORMAL = "<"
@@ -26,4 +27,4 @@ $env.config.edit_mode = 'vi'
 alias nu-open = open
 alias open = ^open
 alias v = nvim
-
+alias j = joplin
