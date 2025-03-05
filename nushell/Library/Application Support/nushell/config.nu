@@ -23,7 +23,8 @@ $env.config.buffer_editor = "nvim"
 $env.PROMPT_INDICATOR_VI_NORMAL = "<"
 $env.PROMPT_INDICATOR_VI_INSERT = ">"
 $env.config.edit_mode = 'vi'
+$env.config.show_banner = false
 alias nu-open = open
 alias open = ^open
 alias v = nvim
-
+alias j = joplin

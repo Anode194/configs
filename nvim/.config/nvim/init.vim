@@ -1,5 +1,5 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
+"set runtimepath^=~/.vim runtimepath+=~/.vim/after
+"let &packpath=&runtimepath
 "---------------------------------------- general settings------------------------------------------------------"
 filetype plugin indent on
 " show existing tab with 2 spaces width
