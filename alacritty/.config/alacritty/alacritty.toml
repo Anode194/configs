@@ -18,7 +18,7 @@ title = "Cogito ergo sum"
 dynamic_title = false
 # FONT
 [font]
-normal = { family = "Inconsolata", style = "Expanded Regular"}
+normal = { family = "Inconsolata Nerd Font Mono", style = "Regular"}
 bold = { family = "Inconsolata", style = "Expanded ExtraBold"}
 builtin_box_drawing = true
 size = 18.0

@@ -26,8 +26,11 @@ $env.PROMPT_INDICATOR_VI_NORMAL = " : "
 $env.PROMPT_INDICATOR_VI_INSERT = " : "
 $env.config.show_banner = false
 $env.config.edit_mode = 'vi'
+<<<<<<< HEAD
 $env.config.show_banner = false
+=======
 source ~/Code/nu_scripts/themes/nu-themes/tokyo-night.nu
+>>>>>>> 241f936bf0e75490233047bc480e6987b0791e28
 alias nu-open = open
 alias open = ^open
 alias v = nvim
