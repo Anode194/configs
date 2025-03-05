@@ -19,11 +19,14 @@
 
 $env.path ++= ["/opt/homebrew/bin/"]
 $env.path ++= ["/usr/local/bin/"]
+$env.path ++= ["~/.joplin-bin/bin/joplin"]
 $env.config.buffer_editor = "/opt/homebrew/bin/nvim"
 $env.config.buffer_editor = "nvim"
-$env.PROMPT_INDICATOR_VI_NORMAL = "<"
-$env.PROMPT_INDICATOR_VI_INSERT = ">"
+$env.PROMPT_INDICATOR_VI_NORMAL = " : "
+$env.PROMPT_INDICATOR_VI_INSERT = " : "
+$env.config.show_banner = false
 $env.config.edit_mode = 'vi'
+source ~/Code/nu_scripts/themes/nu-themes/tokyo-night.nu
 alias nu-open = open
 alias open = ^open
 alias v = nvim
