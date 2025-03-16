@@ -20,6 +20,8 @@
 $env.path ++= ["/opt/homebrew/bin/"]
 $env.path ++= ["/usr/local/bin/"]
 $env.path ++= ["~/.joplin-bin/bin/joplin"]
+$env.path ++= ["~/.cargo/bin/"]
+$env.path ++= ["/Users/anode/Code/bin/"]
 $env.config.buffer_editor = "/opt/homebrew/bin/nvim"
 $env.config.buffer_editor = "nvim"
 $env.PROMPT_INDICATOR_VI_NORMAL = " : "
