@@ -30,6 +30,7 @@ vim.optlistchars = {tab = '» ', trail = '·', nbsp = '␣' }
 -- preview %s commands
 vim.opt.inccommand = 'split'
 vim.opt.scrolloff = 10
+vim.opt.tabstop = 4
 
 vim.opt.termguicolors = true
 
@@ -40,7 +41,13 @@ local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-
+--lsp plugins
+Plug('neovim/nvim-lspconfig')
+Plug('hrsh7th/nvim-cmp')
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('williamboman/mason.nvim')
+Plug('williamboman/mason-lspconfig.nvim')
+--
 Plug('machakann/vim-highlightedyank')
 --focused writing:
 Plug('junegunn/goyo.vim')
@@ -60,6 +67,7 @@ vim.call('plug#end')
 -- ale / lsp
 -- mason lsp installing
 require("treesitter") -- additional treesitter configs
+require("lsp") -- additional treesitter configs
 -- remaps
 -- netrw
 vim.keymap.set('n', '<Leader>fe', vim.cmd.Ex)
