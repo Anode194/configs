@@ -5,7 +5,7 @@ map("", "<Space>", "<Nop>", silent)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- -- basic configs 
+-- -- basic configs
 -- line number
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -26,14 +26,13 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.list = true
 -- white space characters
-vim.optlistchars = {tab = '» ', trail = '·', nbsp = '␣' }
+vim.optlistchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- preview %s commands
 vim.opt.inccommand = 'split'
 vim.opt.scrolloff = 10
 vim.opt.tabstop = 4
-
+vim.opt.linebreak=true
 vim.opt.termguicolors = true
-
 
 -- plugins
 
@@ -54,34 +53,34 @@ Plug('junegunn/goyo.vim')
 Plug('junegunn/limelight.vim')
 Plug('ghifarit53/tokyonight-vim')
 Plug('tiagovla/tokyodark.nvim')
- --git integration
+--git integration
 Plug('tpope/vim-fugitive')
 -- better surround keymaps
 Plug('tpope/vim-surround')
 Plug('ibhagwan/fzf-lua')
 Plug('gmist/vim-palette')
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 vim.call('plug#end')
 -- note: vimplug is in vimscript so you have to wrap do and for in [] for it to not error. those are reserved tokens in lua _i think_. I may switch plugin managers but I've always liked plug for its clean interface.
 -- TODO:
 -- ale / lsp
 -- mason lsp installing
 require("treesitter") -- additional treesitter configs
-require("lsp") -- additional treesitter configs
+require("lsp")        -- additional treesitter configs
 -- remaps
 -- netrw
 vim.keymap.set('n', '<Leader>fe', vim.cmd.Ex)
 -- clear search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- fzf keybinds
-vim.keymap.set('n', '<leader>b',':FzfLua buffers<cr>')
-vim.keymap.set('n', '<leader>G',':FzfLua git_files<cr>')
+vim.keymap.set('n', '<leader>b', ':FzfLua buffers<cr>')
+vim.keymap.set('n', '<leader>G', ':FzfLua git_files<cr>')
 
-vim.keymap.set('n', '<leader>cf',':FzfLua files cwd=~/Code/<cr>')
-vim.keymap.set('n', '<leader>cf',':FzfLua files cwd=~/Code/<cr>')
+vim.keymap.set('n', '<leader>cf', ':FzfLua files cwd=~/Code/<cr>')
+vim.keymap.set('n', '<leader>cf', ':FzfLua files cwd=~/Code/<cr>')
 -- visual line moving.
-vim.keymap.set('n', 'j','gj')
-vim.keymap.set('n', 'k','gk')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 
 -- I can't be bothered to figure out the proper way to use luas autocmd this is fewer lines anyway.
 -- TODO: switch autocomd to lua
